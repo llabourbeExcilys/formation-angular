@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import {Router, RouterModule, Routes} from '@angular/router';
 import {RecipesComponentComponent} from './recipes-component/recipes-component.component';
+import {DetailComponent} from './detail/detail.component';
 
 
 const routes: Routes = [
+  {
+    path: 'recipes/:id',
+    component: DetailComponent,
+    pathMatch: 'full'
+  },
   {
     path: 'recipes',
     component: RecipesComponentComponent,

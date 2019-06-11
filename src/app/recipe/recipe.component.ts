@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Recipe} from './recipe';
 import {ServiceRecipeService} from '../service-recipe.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-recipe',
@@ -11,14 +12,12 @@ import {ServiceRecipeService} from '../service-recipe.service';
 
 export class RecipeComponent implements OnInit {
 
-
-
   @Input()
   recipe: Recipe;
 
   visible = true;
 
-  constructor(private service: ServiceRecipeService) { }
+  constructor(private service: ServiceRecipeService, private router: Router) { }
 
   ngOnInit() {
     this.service.getRecipe(this.recipe.id.toString()).subscribe(result => console.log(result.name));

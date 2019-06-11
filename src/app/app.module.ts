@@ -8,13 +8,15 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { HttpClientModule} from '@angular/common/http';
 import { RecipesComponentComponent } from './recipes-component/recipes-component.component';
 import {AppRoutingModule} from './app-routing.module';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RecipeComponent,
-    RecipesComponentComponent
+    RecipesComponentComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
