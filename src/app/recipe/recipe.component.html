@@ -1,0 +1,30 @@
+<mat-card class="example-card">
+
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{recipe.name}}</mat-card-title>
+    <mat-card-subtitle>{{recipe.description}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image [src]="recipe.picture" alt="Photo of a Shiba Inu">
+
+  <mat-card-content>
+
+    <div *ngIf="visible">
+      <ul>
+        <li *ngFor="let myingredient of recipe.ingredients">
+          {{myingredient.ingredient.name}}-{{myingredient.quantity}}-{{myingredient.unit}}
+        </li>
+      </ul>
+
+      <ul>
+        <li *ngFor="let instruction of recipe.instructions">
+          {{instruction}}
+        </li>
+      </ul>
+    </div>
+
+    <button mat-button (click)="toggleVisibility()">Show ingredients</button>
+
+  </mat-card-content>
+</mat-card>

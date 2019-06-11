@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {MOCK_RECIPES} from './recipe/recipes.mock';
+import {Recipe} from './recipe/recipe';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'formation';
+  recipes = MOCK_RECIPES;
 }
