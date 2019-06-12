@@ -9,6 +9,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { RecipesComponentComponent } from './recipes-component/recipes-component.component';
 import {AppRoutingModule} from './app-routing.module';
 import { DetailComponent } from './detail/detail.component';
+import { FormRecipeComponent } from './form-recipe/form-recipe.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { DetailComponent } from './detail/detail.component';
     HeaderComponent,
     RecipeComponent,
     RecipesComponentComponent,
-    DetailComponent
+    DetailComponent,
+    FormRecipeComponent
   ],
   imports: [
     BrowserModule,
     CustomMaterialModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

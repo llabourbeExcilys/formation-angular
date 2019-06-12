@@ -1,0 +1,18 @@
+<div class="example-container">
+  <form [formGroup]="recipeForm" (ngSubmit)="addRecipe()">
+
+  <mat-form-field >
+    <input  formControlName="description" matInput placeholder="Description">
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="name" matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="picture" matInput placeholder="Link to picture">
+  </mat-form-field>
+
+  <button mat-button (click)="addRecipe()" [routerLink]="['/recipes']">Add a new recipe</button>
+
+  </form>
+
+</div>

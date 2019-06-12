@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Recipe} from './recipe';
 import {ServiceRecipeService} from '../service-recipe.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-recipe',
@@ -15,9 +14,12 @@ export class RecipeComponent implements OnInit {
   @Input()
   recipe: Recipe;
 
+  @Output()
+  delete = new EventEmitter<void>();
+
   visible = true;
 
-  constructor(private service: ServiceRecipeService, private router: Router) { }
+  constructor(private service: ServiceRecipeService) { }
 
   ngOnInit() {
     this.service.getRecipe(this.recipe.id.toString()).subscribe(result => console.log(result.name));
@@ -26,6 +28,7 @@ export class RecipeComponent implements OnInit {
   toggleVisibility() {
     this.visible = !this.visible;
   }
+
 
 
 }

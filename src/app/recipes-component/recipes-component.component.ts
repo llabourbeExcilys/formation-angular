@@ -14,7 +14,14 @@ export class RecipesComponentComponent implements OnInit {
   constructor(private serviceRecipeService: ServiceRecipeService) { }
 
   ngOnInit(): void {
-    this.serviceRecipeService.getRecipes().subscribe(result => this.recipes = result);
+    this.load();
   }
 
+  delete(id: number) {
+    this.serviceRecipeService.deleteRecipe(id).toPromise().then( () => this.load() );
+  }
+
+  load(): void {
+    this.serviceRecipeService.getRecipes().subscribe(result => this.recipes = result);
+  }
 }

@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import {Router, RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
 import {RecipesComponentComponent} from './recipes-component/recipes-component.component';
 import {DetailComponent} from './detail/detail.component';
+import {FormRecipeComponent} from './form-recipe/form-recipe.component';
 
 
 const routes: Routes = [
+  {
+    path: 'recipes/add',
+    component: FormRecipeComponent,
+    pathMatch: 'full'
+  },
   {
     path: 'recipes/:id',
     component: DetailComponent,
